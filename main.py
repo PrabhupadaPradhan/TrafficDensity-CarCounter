@@ -34,7 +34,7 @@ while 1:
             objectdetect = classnames[classindex]
 
 
-            if objectdetect=='car' or objectdetect=='bus' or objectdetect=='truck' and conf>67:
+            if (objectdetect == 'car' and conf > 75) or ((objectdetect == 'bus' or objectdetect == 'truck') and conf > 67):
                 x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2)
                 new_detections = np.array([x1, y1, x2, y2, conf])
                 detections = np.vstack((detections, new_detections))
